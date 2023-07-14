@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>livestock-wealth</title>
+  <link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"/>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  <script>
+    function SubscribeForm() {
+      const [email, setEmail] = useState("");
+      const [address, setAddress] = useState("");
+      const [message, setMessage] = useState("");
+
+      const handleSubmit = (event) => {
+      event.preventDefault();
+
+      let formData = new URLSearchParams();
+      formData.append('email', email);
+
+      fetch("https://subscriber-server-service.onrender.com/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formData.toString(),
+      })
+      .then((response) => response.json())
+      .then((data) => setMessage("Subscription Successful"))
+      .catch((error) => setMessage("Error: " + error));
+    };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Email:
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </label>
+      <label>
+        Address:
+        <input
+          type="text"
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+        />
+      </label>
+      <button type="submit">Subscribe</button>
+      {message && <p>{message}</p>}
+    </form>
+  );
+}
+  </script>
+</head>
+<body>
+  <div class="navbar">
+    <a class="navbar" href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+    </svg></a>
+    <a class="navbar" href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+      <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+    </svg></a>
+    <a class="navbar" href=""><i class="bi bi-search"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+    </svg></a>
+    <a class="navbar" href="#"><i class=""></i> |</a>
+    <a class="navbar" href="#"><i class=""></i> Our Story</a>
+    <a class="navbar" href="#"><i class=""></i> Blog</a> 
+    <a class="navbar" href="#"><i class=""></i> Shop</a>
+    <div class="img">
+      <a class="navbar"><img src = "logo.svg" alt="SVG Logo"/></a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="carousel">
+      <img src="image1.png" alt="img" id="img1">
+    </div>
+    <br />
+    <div class="cateloge">
+      <div class="headings">
+        <h3>Shop The Latest</h3><h6>View All</h6>
+      </div>
+      <div class="items">
+        <img class="img-items" src="img7.png" alt="img">
+        <div class="icons">
+          <a href=""><i class="fas fa-cart-shopping"></i></a>
+          <a href=""><i class="far fa-eye"></i></a>
+          <a href=""><i class="far fa-heart"></i></a>
+        </div>
+        <p class="description">Lira Earrings<br><b>$20.00</b></p>
+      </div>
+      <div class="items">
+        <img class="img-items" src="img5.png" alt="img" id="imgph2">
+        <div class="icons">
+          <a href=""><i class="fas fa-cart-shopping"></i></a>
+          <a href=""><i class="far fa-eye"></i></a>
+          <a href=""><i class="far fa-heart"></i></a>
+        </div>
+        <p class="description">Hal Earrings<br><b>$25.00</b></p>
+      </div>
+      <div class="items">
+        <img class="img-items" src="img4.png" alt="img">
+        <div class="icons">
+          <a href=""><i class="fas fa-cart-shopping"></i></a>
+          <a href=""><i class="far fa-eye"></i></a>
+          <a href=""><i class="far fa-heart"></i></a>
+        </div>
+        <p class="description">Kaede Hair Pin Set Of 3<br><b>$30.00</b></p>
+      </div>
+      <div class="items">
+        <img class="img-items" src="img2.png" alt="img">
+        <div class="icons">
+          <a href=""><i class="fas fa-cart-shopping"></i></a>
+          <a href=""><i class="far fa-eye"></i></a>
+          <a href=""><i class="far fa-heart"></i></a>
+        </div>
+        <p class="description">Hair Pin Set Of 3<br><b>$30.00</b></p>
+      </div>
+      <div class="items">
+        <img class="img-items" src="img3.png" alt="img">
+        <div class="icons">
+          <a href=""><i class="fas fa-cart-shopping"></i></a>
+          <a href=""><i class="far fa-eye"></i></a>
+          <a href=""><i class="far fa-heart"></i></a>
+        </div>
+        <p class="description">Plaine Necklace<br><b>$19.00</b></p>
+      </div>
+      <div class="items">
+        <img class="img-items" src="img6.png" alt="img">
+        <div class="icons">
+          <a href=""><i class="fas fa-cart-shopping"></i></a>
+          <a href=""><i class="far fa-eye"></i></a>
+          <a href=""><i class="far fa-heart"></i></a>
+        </div>
+        <p class="description">Yuki Hair Pin Set Of 3<br><b>$29.00</b></p>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <hr>
+      <a class="footer" href="">Contact</a>
+      <a class="footer" href="">Terms of Service</a>
+      <a class="footer" href="">Shipping And Returns</a>
+      <form action="https://subscriber-server-service.onrender.com/" method="post">
+        <input type="email" placeholder="Give an email, get the newsletter." name="email" />
+        <button class="btn" type="submit" onclick="SubscribeForm()"><i class="fa fa-arrow-right"></i></button>
+      </form>
+      <br />
+      <div class="socials">
+        <a href="https://za.linkedin.com/company/livestock-wealth"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/livestockwealthZA/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/livestock_wealth/"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/livestockwealth"><i class="fab fa-twitter"></i></a>
+      </div>
+      <p class="footer">
+        &copy; 2021 Shelly. Terms of use <b>and</b> privacy policy.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

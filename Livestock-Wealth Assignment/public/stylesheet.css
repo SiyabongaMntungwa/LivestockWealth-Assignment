@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'Valencia';
+    src: url(fonts/De\ Valencia\ \(beta\).otf) format('opentype');
+}
+
+a.navbar {
+    padding-right: 25px;
+    padding-top: 50px;
+    text-decoration: none;
+    float: right;
+    position: relative;
+    right: 40px;
+    font-family: 'Valencia', sans-serif;
+    font-size: 1.1em;
+    color: #000;
+}
+
+div.img {
+    float: left;
+    padding-left: 100px;
+}
+
+a.footer {
+    text-decoration: none;
+    font-family: 'Valencia', sans-serif;
+    font-size: 1em;
+    color: gray;
+    padding-right: 25px;
+    text-transform: uppercase;
+}
+
+div.footer {
+    position: relative;
+    bottom: 0px;
+    margin: 50px;
+    height: 10vh;
+}
+
+input[type=email] {
+    position: absolute;
+    font-family: 'Valencia', sans-serif;
+    right: 0px;
+    width: 35%;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+.btn[type=submit] {
+    position: absolute;
+    font-family: 'Valencia', sans-serif;
+    right: 0px;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: white;
+}
+
+p.footer {
+    font-family: 'Valencia', sans-serif;
+    font-size: 0.8em;
+}
+
+div.socials {
+    float: right;
+    padding-top: 15px;
+}
+
+i {
+    padding-left: 15px;
+}
+
+#img1 {
+    position: relative;
+    left: 50px;
+    width: 90%;
+    height: 60%;
+}
+
+.headings {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.cateloge {
+    position: relative;
+    height: 100vh;
+    font-family: 'Valencia', sans-serif;
+    margin: 50px;
+    text-align: center;
+}
+
+.items {
+    position: relative;
+    width: 25%;
+    height: 40%;
+    color: rgb(173, 173, 173);
+    display: inline-flex;
+    margin: 30px;
+}
+
+.img-items {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+#imgph2 {
+}
+.img-items:hover {
+
+}
+.items:hover {
+    opacity: 0.4;
+}
+
+.icons {
+    position: relative;
+    display:  flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    color: #000;
+}
+
+.icons:hover {
+    opacity: 1;
+}
+
+.description {
+    position: absolute;
+    left: 0px;
+    bottom: -3.5em;
+    font-family: 'Valencia', sans-serif;
+    font-size: 1em;
+    color: darkslategray;
+}
+
+.description:hover {
+    opacity: 1;
+}
